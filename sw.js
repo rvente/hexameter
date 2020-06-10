@@ -26,7 +26,7 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-58a13673c7ea6bc13b7a.js"
+    "url": "webpack-runtime-cc78c3d0748ba55bc107.js"
   },
   {
     "url": "framework-59a9ef51c55d9b62f7de.js"
@@ -35,22 +35,14 @@ self.__precacheManifest = [
     "url": "f0e45107-970679e7d1ca4d9f03d4.js"
   },
   {
-    "url": "app-9222bb6a2fcdc5bfdbd5.js"
+    "url": "app-abb77dc1a3275be12156.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-d9ff9b04d73194b6d64a.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "7fda0304dce86ad38b803de96a6a6ff3"
-  },
-  {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "c355c8040c47a63bfb3360e4b7cb6553"
-  },
-  {
-    "url": "page-data/app-data.json",
-    "revision": "534c3ba24db30f347cc8a46d004e99df"
+    "revision": "6354ab0f06132532d1fa8f8aafe9d245"
   },
   {
     "url": "manifest.json",
@@ -58,7 +50,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "c6492fda0d442deed30d8ef8f87fbe55"
+    "revision": "1d92f1c027bce9432b6f7d9787c8d202"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
@@ -77,12 +69,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/hexameter`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/hexameter/app-9222bb6a2fcdc5bfdbd5.js`))) {
+  if (!resources || !(await caches.match(`/app-abb77dc1a3275be12156.js`))) {
     return await fetch(event.request)
   }
 
@@ -95,7 +87,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/hexameter/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
