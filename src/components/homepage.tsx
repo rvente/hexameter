@@ -11,6 +11,7 @@ import replaceSlashes from "../utils/replaceSlashes"
 import Hero from "../texts/hero"
 // @ts-ignore
 import Bottom from "../texts/bottom"
+import P5 from "./p5"
 
 type PostsProps = {
   posts: {
@@ -40,6 +41,7 @@ const Homepage = ({ posts }: PostsProps) => {
       </Title>
       <Listing posts={posts} showTags={false} />
       <List>
+        <P5 />
         <Bottom />
       </List>
     </Layout>
