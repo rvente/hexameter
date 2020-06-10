@@ -1,4 +1,9 @@
-export default function Sketch(p5) {
+import React, { Component } from "react"
+import Loadable from "@loadable/component";
+const P5Wrapper = Loadable(() => import('react-p5-wrapper'));
+
+function Sketch(p5) {
+  /* eslint-disable */
     let canvas;
 
     p5.setup = () => {
@@ -20,3 +25,10 @@ export default function Sketch(p5) {
       p5.circle(p5.mouseX, p5.mouseY, 70, 70);
     };
   }
+
+export default class App extends Component{
+
+  render() {
+    return <P5Wrapper sketch={Sketch} />
+  }
+}
