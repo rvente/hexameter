@@ -3,12 +3,13 @@ require(`dotenv`).config({
 })
 
 module.exports = {
+  pathPrefix: "",
   siteMetadata: {
     siteTitle: "hexameter",
     siteTitleAlt: `lyrically sound`,
     author: "Ralph 'Blake' Vente",
-    description: "A collection of my thoughts and writings.",
-    siteUrl: "https://amberley.blog/",
+    description: "A window through my eyes.",
+    siteUrl: "https://blog.rvente.com",
   },
   plugins: [
     {
