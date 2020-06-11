@@ -1,9 +1,71 @@
 ---
-title: "TeXNet"
+title: "TeXNet.ai"
 date: 2018-03-11
 tags:
   - Projects
+  - AI
 toc: true
 ---
 
-This part of the site is under construction.
+<p align="center">
+  <img
+  src="https://raw.githubusercontent.com/rvente/TeXNet.ai/master/assets/texnet_logo.png"
+  boxShadow= "0 0 0 rgba(0,0,0,0)"
+  width="400" height="auto"
+  />
+</p>
+
+The prospect of accurately transcribing mathematical expression into a
+markup representation is enticing because it opens the doors for
+bringing new life to old mathematical texts or those for which the
+source code is unavailable.
+
+<p align="center">
+  <img
+  src="https://raw.githubusercontent.com/rvente/TeXNet.ai/master/assets/demo.png"/>
+</p>
+
+[Sumeet Singh's work](https://github.com/untrix/im2latex) laid the groundwork
+for this projec. We ported his model to Python3 and created our own dataset of
+170,000 examples generated from mined source code.
+
+Demonstration Video
+-----------
+
+<div margin="auto">
+<iframe width="896" height="504" src="https://www.youtube.com/embed/ew6JG2c3M24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+Preprocessing Pipeline
+----------
+
+LaTeX is a very dynamic language so increasing the size of our data with
+additional examples would be prohibitively expensive. Instead we built a
+pipeline using `pandoc` to expand macros, aggregate, and normalize LaTeX source
+code samples from Cornell's Arxiv.
+
+<p align="center">
+  <img
+  src="https://raw.githubusercontent.com/rvente/TeXNet.ai/master/Final-Paper/assets/harvest.svg"
+  width="960" height="auto"/>
+</p>
+
+
+Additional Resources
+-----------
+
+[Sumeet S. Singh's Project Site](https://github.com/untrix/im2latex)
+
+[Complete Dataset](https://drive.google.com/file/d/1mwUwoyhcz63mTd3s1v4Q8QoRBPBSzGEi/view?usp=sharing)
+
+[Research Paper](https://github.com/rvente/TeXNet.ai/blob/master/Final-Paper/Final_Paper.pdf)
+
+Team
+----
+
+<a href="https://github.com/rvente"><img
+src="https://avatars2.githubusercontent.com/u/21066644?v=4" title="Blake Vente"
+width="120" height="120" /></a>
+<a href="https://github.com/taradactyl27"><img
+src="https://avatars2.githubusercontent.com/u/31744974?v=4" title="Alex
+Taradachuk" width="120" height="120" /></a>
