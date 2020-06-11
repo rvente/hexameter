@@ -10,26 +10,46 @@ const P5Wrapper = Loadable(() => import("react-p5-wrapper"));
 function Sketch(p5) {
   // particle system singleton
   let system;
-
+  let canvas;
+  let gAlpha = 256;
+  let fadeOut = false;
   p5.setup = () => {
     p5.ellipseMode(p5.CENTER);
     p5.rectMode(p5.CENTER);
-    p5.createCanvas(400, 400);
+    canvas = p5.createCanvas(400, 400);
+    canvas.mouseClicked(fadeToBlack);
     p5.background(0);
-    p5.colorMode(p5.HSB, 100);
+    p5.noStroke();
+    p5.colorMode(p5.RGB, 100);
     system = new ParticleSystem(p5.createVector(200, 200), .01);
   };
 
+  let fadeToBlack = () => {
+    fadeOut = true;
+  }
+
   p5.draw = () => {
-    p5.background(0);
-    p5.fill(p5.color("black"));
-    let c = p5.color(255,0,255);
-    if (p5.random() > .75){
-      system.addParticle(0.01, c);
-    }
+    let black = p5.color("black");
+    let white = p5.color("white");
+    let spanC = p5.color(100,p5.random(gAlpha));
+    p5.background(black);
+    p5.fill(white);
     system.run();
-    p5.fill(p5.color("black"));
-    p5.circle(200,200,70,70);
+    if (fadeOut){
+      gAlpha = Math.max(0,gAlpha-1);
+      fadeOut = gAlpha
+      if (!fadeOut) {
+        system.particles = [];
+      }
+    } else {
+      fadeOut = false;
+      gAlpha = Math.min(100,gAlpha+10);
+      if (gAlpha >=100 && p5.random() > .75){
+      system.addParticle(0.013, spanC);
+      }
+    } 
+      p5.fill(p5.color(0,gAlpha));
+      p5.circle(200,200,70);
   };
 
 
@@ -43,7 +63,7 @@ function Sketch(p5) {
         p5.random(0.01, 0.05), p5.random(0.01, 0.05)
         );
       this.position = position.copy();
-      this.lifespan = 255;
+      this.lifespan = 100;
       this.color = c;
     }
     run() {
@@ -54,13 +74,13 @@ function Sketch(p5) {
     update() {
       this.velocity.add(this.acceleration);
       this.position.add(this.velocity);
-      this.color.setAlpha(this.lifespan);
-      this.lifespan -= p5.random(3);
+      this.color.setAlpha(this.lifespan * gAlpha/100);
+      this.lifespan -= p5.random(1);
     }
     // Method to display
     display() {
       p5.push();
-      p5.stroke(256, this.lifespan);
+      p5.stroke(p5.color(100, this.lifespan * gAlpha/100)) ;
       p5.strokeWeight(2);
       p5.fill(this.color);
       p5.rect(this.position.x, this.position.y, 24, 24);
@@ -97,7 +117,7 @@ function Sketch(p5) {
 export default class App extends Component {
   render() {
     const dropShadow={
-      boxShadow: "0px 0px 15px",
+      boxShadow: "0px 0px 15px black",
       width: "400px",
       height: "400px",
       margin: "auto"
