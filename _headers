@@ -67,16 +67,6 @@
   Link: </component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-tags-query-tsx-60089258c258c657347d.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/tags/page-data.json>; rel=preload; as=fetch; crossorigin
-/void
-  Link: </webpack-runtime-73b214d12c1d44880f29.js>; rel=preload; as=script
-  Link: </framework-9fe058f4359556db0d38.js>; rel=preload; as=script
-  Link: </f0e45107-14de746ffa42a2a3272a.js>; rel=preload; as=script
-  Link: </app-9b000ed37043bf2b0659.js>; rel=preload; as=script
-  Link: </styles-823ae8103e36ae8a7f9f.js>; rel=preload; as=script
-  Link: </aed2e917f30c051bccba91aa15989a75fd0bd633-7afa64e55d0d6d197727.js>; rel=preload; as=script
-  Link: </component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-post-query-tsx-fba44adaa5a4c92a5935.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/void/page-data.json>; rel=preload; as=fetch; crossorigin
 /te-x-net-ai
   Link: </webpack-runtime-73b214d12c1d44880f29.js>; rel=preload; as=script
   Link: </framework-9fe058f4359556db0d38.js>; rel=preload; as=script
@@ -87,6 +77,16 @@
   Link: </component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-post-query-tsx-fba44adaa5a4c92a5935.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/te-x-net-ai/page-data.json>; rel=preload; as=fetch; crossorigin
+/void
+  Link: </webpack-runtime-73b214d12c1d44880f29.js>; rel=preload; as=script
+  Link: </framework-9fe058f4359556db0d38.js>; rel=preload; as=script
+  Link: </f0e45107-14de746ffa42a2a3272a.js>; rel=preload; as=script
+  Link: </app-9b000ed37043bf2b0659.js>; rel=preload; as=script
+  Link: </styles-823ae8103e36ae8a7f9f.js>; rel=preload; as=script
+  Link: </aed2e917f30c051bccba91aa15989a75fd0bd633-7afa64e55d0d6d197727.js>; rel=preload; as=script
+  Link: </component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-post-query-tsx-fba44adaa5a4c92a5935.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/void/page-data.json>; rel=preload; as=fetch; crossorigin
 /the-open-source-workflow-part-2
   Link: </webpack-runtime-73b214d12c1d44880f29.js>; rel=preload; as=script
   Link: </framework-9fe058f4359556db0d38.js>; rel=preload; as=script
