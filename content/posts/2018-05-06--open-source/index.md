@@ -1,7 +1,7 @@
 ---
 title: "The Open Source Workflow: Part 1"
 date: 2018-05-06
-author: "Blake vente"
+author: "Blake Vente"
 category: "Workflows"
 ---
 

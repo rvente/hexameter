@@ -8,6 +8,7 @@ import Header from "./header"
 import Footer from "./footer"
 import CodeStyles from "../styles/code"
 import SkipNavLink from "./skip-nav"
+import "katex/dist/katex.min.css"
 
 type LayoutProps = { children: React.ReactNode; className?: string }
 
