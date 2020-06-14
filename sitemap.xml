@@ -4,6 +4,7 @@
 <url> <loc>https://blog.rvente.com/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/void</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.rvente.com/math</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/the-open-source-workflow-part-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/the-open-source-workflow-part-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/te-x-net-ai</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -11,6 +12,7 @@
 <url> <loc>https://blog.rvente.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/tags/ai</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/tags/art</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://blog.rvente.com/tags/demo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/tags/projects</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://blog.rvente.com/tags/snapshots</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
