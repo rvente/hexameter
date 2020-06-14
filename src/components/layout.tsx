@@ -28,7 +28,7 @@ const Layout = ({ children, className }: LayoutProps) => (
           color: `text`,
         },
         img: {
-          maxWidth: "960px",
+          maxWidth: "min(90vw, 960px)",
           boxShadow: "1px 1px 10px rgba(0, 0, 0, 0.3)"
         }
       })}
