@@ -5,11 +5,14 @@ require(`dotenv`).config({
 module.exports = {
   pathPrefix: "",
   siteMetadata: {
-    siteTitle: "hexameter",
-    siteTitleAlt: `lyrically sound`,
-    author: "Ralph 'Blake' Vente",
-    description: "A window through my eyes.",
-    siteUrl: "https://blog.rvente.com",
+    "siteTitle": "hexameter",
+     "siteTitleAlt": "dactylic hexameter",
+     "siteHeadline": "Minimal Blog - Gatsby Theme from @lekoarts",
+     "siteUrl": "https://blog.rvente.com",
+     "siteDescription": "Generative art, artificial intelligence, and the hope that tech will take us far.",
+     "siteLanguage": "en",
+     "siteImage": "/banner.jpg",
+     "author": "Ralph 'Blake' Vente"
   },
   plugins: [
     {
@@ -62,7 +65,7 @@ module.exports = {
       options: {
         name: `Dactylic Hexameter`,
         short_name: `hexameter`,
-        description: `I dream of a world where code and ML disrupt the achievement gap with rich educatonal experiences`,
+        description: `I dream of a world where code and ML disrupt the achievement gap with rich educational experiences`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
