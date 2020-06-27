@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "minimal-blog",
-  "description": "Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and line highlighting.",
+  "name": "hexameter",
+  "description": "I dream of a world where code and ML disrupt the achievement gap with rich educatonal experiences",
   "version": "1.1.7",
-  "author": "LekoArts <hello@lekoarts.de>",
+  "author": "Blake",
   "license": "MIT",
   "starter-name": "gatsby-starter-minimal-blog",
   "scripts": {

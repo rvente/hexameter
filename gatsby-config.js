@@ -41,11 +41,11 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/blake_2048`,
+            url: `https://twitter.com/blake_2048/`,
           },
           {
             name: `Insta`,
-            url: `https://www.instagram.com/vente_nyc/`,
+            url: `https://www.instagram.com/blake_2048/`,
           },
         ],
       },
@@ -62,7 +62,7 @@ module.exports = {
       options: {
         name: `Dactylic Hexameter`,
         short_name: `hexameter`,
-        description: `Blake is a CS major exploring the worlds of AI, Computer Vision, Linguistics, and Generative Art`,
+        description: `I dream of a world where code and ML disrupt the achievement gap with rich educatonal experiences`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#6B46C1`,
