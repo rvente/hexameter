@@ -79,14 +79,8 @@ This may have been an interesting tangent, but let's get back on topic. Why
 I can tell you how I feel. There's never any paywalls, and that's very
 liberating. You never have to worry about another expense when you're trying to
 make it out here as a college student. That makes sense, but there's free stuff
-everywhere, right? Why should I "De-Google" myself? Isn't all their stuff is
+everywhere, right? Why should I use Open Source Software? Isn't all their stuff is
 free?
-
-Here's were things get a little hard to explain. As usual, I'll try my best.
-Whatever company you choose, if a service its service is free, you are the
-product. You have a comprehensive analysis done of your browsing history. They
-target ads to you, and make money doing it. That sounds innocent, right? I'd
-like to challenge that.
 
 With the recent fiasco involving Cambridge Analytica, you can start to
 appreciate how important your data is. There's much more than you at stake here.

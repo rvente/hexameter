@@ -24,6 +24,7 @@ const Footer = () => {
         &#127279; {new Date().getFullYear()} by {author}. All wrongs reversed.
       </div>
       <div>
+        This site uses cookies.&nbsp;
         <Link
           aria-label="Link to the theme's GitHub repository"
           href="https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-minimal-blog"
