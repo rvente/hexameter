@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://blog.rvente.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/something-is-coming</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/texnet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/void</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/the-open-source-workflow-part-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/the-open-source-workflow-part-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/pentasyllabics</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/tags/ai</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/tags/art</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/tags/demo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/tags/projects</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://blog.rvente.com/tags/snapshots</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/something-is-coming</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/texnet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/void</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/the-open-source-workflow-part-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/the-open-source-workflow-part-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/pentasyllabics</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/about</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/tags/ai</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/tags/art</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/tags/demo</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/tags/projects</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/tags/snapshots</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
