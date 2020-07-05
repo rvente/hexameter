@@ -40,7 +40,6 @@ const SEO = ({ title, description, pathname, image, children }: SEOProps) => {
   }
   return (
     <Helmet title={title} defaultTitle={defaultTitle} titleTemplate={`%s | ${siteTitle}`}>
-      <script data-ad-client="ca-pub-9020402514650225" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <html lang={siteLanguage} />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
