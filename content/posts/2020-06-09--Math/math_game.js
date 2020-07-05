@@ -24,8 +24,8 @@ let duo;
 // color is reset upon press, so double press will fail
 function mutateGlobalExpr(selection) {
   if (selection === correct) {
-    human = {creator: 'Human', expression: getRandomFormula(HumanFormulas)};
-    ai = {creator: 'AI', expression: getRandomFormula(AIFormulas)};
+    human = {creator: 'Human', expression: getRandomElem(HumanFormulas)};
+    ai = {creator: 'AI', expression: getRandomElem(AIFormulas)};
     duo = shuffle([human,ai]);
     return unselected
   }
@@ -36,6 +36,10 @@ export const GuessWho = () => {
   const [selection, setColor] = useState(unselected);
 
   const answerChoice = (creator, selection) => { 
+    const correctAnswer = creator === 'Human';
+    const correctAnswerSelected = selection === correct  && correctAnswer;
+    const lightShadow = 'rgba(0,0,0,.1)';
+    const darkShadow = 'rgba(0,0,0,.2)';
     return {
       display: 'flex',
       alignItems: 'center',
@@ -43,14 +47,16 @@ export const GuessWho = () => {
       borderRadius: '10px',
       padding: '20px',
       height: '75px',
-      border: 'black thin dashed',
+      border: 'rgba(0,0,0,.1) thin solid',
       width: 'min(90vw, 600px)',
       margin: 'auto',
-      marginTop: '5px',
-      marginBottom: '5px',
+      marginTop: '10px',
+      marginBottom: '10px',
       transition: 'all .25s ease-out',
-      backgroundColor: creator === 'Human' ? selection : unselected ,
-      color: creator==='Human' && selection === correct ? fullWhite : ''
+      boxShadow: `1px 1px 10px ${correctAnswerSelected ? darkShadow : lightShadow}`,
+      textShadow: correctAnswerSelected ? `1px 1px 2px ${darkShadow}` : '',
+      backgroundColor:  correctAnswer ? selection : unselected ,
+      color: correctAnswerSelected ? fullWhite : ''
     }
   };
 
@@ -73,10 +79,15 @@ export const GuessWho = () => {
           ...answerChoice('none', selection)}}
         onClick={() => setColor(mutateGlobalExpr(selection))}
       >
-        Good job! Another?
+        {setWinMsg(selection)}
       </div>
     </>
   )
+ }
+ function setWinMsg(selection) {
+   if (selection === correct) {
+  return getRandomElem(['Good job! Another?', 'Nice work! Have another go?', 'Remarkable detective work. Go again?', "Winner, winner! One more time?"])
+   }
  }
 
 function revealTrue(creator) {
@@ -104,9 +115,9 @@ function rendering(el) {
   }
 }
 
-function getRandomFormula(indexable) {
+function getRandomElem(indexable) {
   const expression = indexable[getRandomInt(indexable.length)];
-  return rendering(expression) ? expression :  getRandomFormula(indexable);
+  return rendering(expression) ? expression :  getRandomElem(indexable);
 }
 
 function shuffle(array) {
