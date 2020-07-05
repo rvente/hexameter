@@ -11,6 +11,8 @@ import replaceSlashes from "../utils/replaceSlashes"
 import Hero from "../texts/hero"
 // @ts-ignore
 import Bottom from "../texts/bottom"
+import AdSense from 'react-adsense';
+ 
 
 type PostsProps = {
   posts: {
@@ -42,6 +44,11 @@ const Homepage = ({ posts }: PostsProps) => {
       <List>
         <Bottom />
       </List>
+      {/* // ads with no set-up */}
+      {/* <AdSense.Google
+        client='ca-pub-9020402514650225'
+        slot='7806394673'
+      /> */}
     </Layout>
   )
 }

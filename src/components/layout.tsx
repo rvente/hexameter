@@ -30,6 +30,8 @@ const Layout = ({ children, className }: LayoutProps) => (
         },
         img: {
           maxWidth: "min(90vw, 960px)",
+          borderRadius: '5px',
+          margin: '10px',
           boxShadow: "1px 1px 10px rgba(0, 0, 0, 0.3)"
         },
         iframe: {
