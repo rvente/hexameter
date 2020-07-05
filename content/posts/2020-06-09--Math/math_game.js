@@ -11,9 +11,15 @@ const green = 'rgb(151, 226, 153)';
 // why is this global? good question: I wanted to keep things concise, so
 // I drew out a fragile state machine and thus minimized code lines, sacrificing
 // good style along the way
-let human = {creator: 'Human', expression: getRandomFormula(HumanFormulas)};
-let ai = {creator: 'AI', expression: getRandomFormula(AIFormulas)};
-let duo = shuffle([human,ai]);
+let human;
+let ai;
+let duo;
+function mutateGlobalExpr() {
+  human = {creator: 'Human', expression: getRandomFormula(HumanFormulas)};
+  ai = {creator: 'AI', expression: getRandomFormula(AIFormulas)};
+  duo = shuffle([human,ai]);
+  return 'white'
+ }
 
 export const GuessWho = () => { 
   const [color, setColor] = useState('white');
@@ -60,12 +66,6 @@ export const GuessWho = () => {
       </div>
     </>
   )
- }
- function mutateGlobalExpr() {
-  human = {creator: 'Human', expression: getRandomFormula(HumanFormulas)};
-  ai = {creator: 'AI', expression: getRandomFormula(AIFormulas)};
-  duo = shuffle([human,ai]);
-  return 'white'
  }
 
 function revealTrue(creator) {
