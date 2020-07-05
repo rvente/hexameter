@@ -6,7 +6,9 @@ import { BlockMath } from 'react-katex';
 import HumanFormulas from './Fixtures/human_out.json';
 import AIFormulas from './Fixtures/ai_out.json';
 
-const green = 'rgb(151, 226, 153)';
+const green = 'rgba(151, 226, 153, .7)';
+const white = 'rgba(255, 255, 255, .05)';
+const fullWhite = 'white'
 
 // why is this global? good question: I wanted to keep things concise, so
 // I drew out a fragile state machine and thus minimized code lines, sacrificing
@@ -18,11 +20,12 @@ function mutateGlobalExpr() {
   human = {creator: 'Human', expression: getRandomFormula(HumanFormulas)};
   ai = {creator: 'AI', expression: getRandomFormula(AIFormulas)};
   duo = shuffle([human,ai]);
-  return 'white'
+  return white
  }
+ mutateGlobalExpr()
 
 export const GuessWho = () => { 
-  const [color, setColor] = useState('white');
+  const [color, setColor] = useState(white);
 
   const answerChoice = (creator, color) => { 
     return {
@@ -38,8 +41,8 @@ export const GuessWho = () => {
       marginTop: '5px',
       marginBottom: '5px',
       transition: 'all .25s ease-out',
-      backgroundColor: creator === 'Human' ? color : 'white' ,
-      color: creator==='Human' && color === green ? 'white' : 'black'
+      backgroundColor: creator === 'Human' ? color : white ,
+      color: creator==='Human' && color === green ? fullWhite : 'black'
     }
   };
 
@@ -69,7 +72,7 @@ export const GuessWho = () => {
  }
 
 function revealTrue(creator) {
-  const newColor = creator !== "Human" ? 'white' : green;
+  const newColor = creator !== "Human" ? white : green;
   return newColor;
   
 }
