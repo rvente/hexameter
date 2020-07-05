@@ -6,8 +6,11 @@ import { BlockMath } from 'react-katex';
 import HumanFormulas from './Fixtures/human_out.json';
 import AIFormulas from './Fixtures/ai_out.json';
 
-const green = 'rgba(151, 226, 153, .7)';
-const white = 'rgba(255, 255, 255, .1)';
+// regard these colors as enum types for component state
+// a useful shortcut -- maintaining one state var instead
+// of many
+const correct = 'rgba(151, 226, 153, .7)';
+const unselected = 'rgba(255, 255, 255, .1)';
 const fullWhite = 'white'
 
 // why is this global? good question: I wanted to keep things concise, so
@@ -16,18 +19,23 @@ const fullWhite = 'white'
 let human;
 let ai;
 let duo;
-function mutateGlobalExpr() {
-  human = {creator: 'Human', expression: getRandomFormula(HumanFormulas)};
-  ai = {creator: 'AI', expression: getRandomFormula(AIFormulas)};
-  duo = shuffle([human,ai]);
-  return white
+
+// hack: prevent double clicks from shifting state
+// color is reset upon press, so double press will fail
+function mutateGlobalExpr(selection) {
+  if (selection === correct) {
+    human = {creator: 'Human', expression: getRandomFormula(HumanFormulas)};
+    ai = {creator: 'AI', expression: getRandomFormula(AIFormulas)};
+    duo = shuffle([human,ai]);
+    return unselected
+  }
  }
- mutateGlobalExpr()
+ mutateGlobalExpr(correct);
 
 export const GuessWho = () => { 
-  const [color, setColor] = useState(white);
+  const [selection, setColor] = useState(unselected);
 
-  const answerChoice = (creator, color) => { 
+  const answerChoice = (creator, selection) => { 
     return {
       display: 'flex',
       alignItems: 'center',
@@ -41,8 +49,8 @@ export const GuessWho = () => {
       marginTop: '5px',
       marginBottom: '5px',
       transition: 'all .25s ease-out',
-      backgroundColor: creator === 'Human' ? color : white ,
-      color: creator==='Human' && color === green ? fullWhite : ''
+      backgroundColor: creator === 'Human' ? selection : unselected ,
+      color: creator==='Human' && selection === correct ? fullWhite : ''
     }
   };
 
@@ -50,7 +58,7 @@ export const GuessWho = () => {
     <>
       { duo.map( (exp) => (
         <div
-          style={ answerChoice(exp.creator, color) }
+          style={ answerChoice(exp.creator, selection) }
           onClick={() => setColor(revealTrue(exp.creator))}
         >
         <BlockMath >
@@ -60,10 +68,10 @@ export const GuessWho = () => {
         ) ) }
       <div
         style={{
-          visibility: color === green ? 'visible' : 'hidden', 
-          opacity: color === green ? '1' : '0',
-          ...answerChoice('none', color)}}
-        onClick={() => setColor(mutateGlobalExpr())}
+          visibility: selection === correct ? 'visible' : 'hidden', 
+          opacity: selection === correct ? '1' : '0',
+          ...answerChoice('none', selection)}}
+        onClick={() => setColor(mutateGlobalExpr(selection))}
       >
         Good job! Another?
       </div>
@@ -72,7 +80,7 @@ export const GuessWho = () => {
  }
 
 function revealTrue(creator) {
-  const newColor = creator !== "Human" ? white : green;
+  const newColor = creator !== "Human" ? unselected : correct;
   return newColor;
   
 }
@@ -106,55 +114,3 @@ function shuffle(array) {
   return array
 }
 
-
-const ExamplePage = () => (
-  <div
-    style={{
-      // width: '40%',
-      margin: '0 auto'
-    }}
-  >
-    <h1>
-      <BlockMath>
-        {'\\text{React-}\\KaTeX \\space \\text{usage examples}'}
-      </BlockMath>
-    </h1>
-    <h2>
-      <code>{'<InlineMath />'}</code>
-    </h2>
-    This is an in-line expression <BlockMath math={'\\int_0^\\infty x^2 dx'} />{' '}
-    passed as <code>math prop</code>. This is an in-line{' '}
-    <BlockMath math={'\\int_0^\\infty x^2 dx'} /> expression passed as{' '}
-    <code>children prop</code>.
-    <h2>
-      <code>{'<BlockMath />'}</code>
-    </h2>
-    <BlockMath math={'\\int_0^\\infty x^2 dx'} />
-    <BlockMath>{`A =
-        \\begin{pmatrix}
-        1 & 0 & 0 \\\\
-        0 & 1 & 0 \\\\
-        0 & 0 & 1 \\\\
-        \\end{pmatrix}`}</BlockMath>
-    <h2>Error handling</h2>
-    <BlockMath math={'\\int_0^\\infty x^2 dx \\inta'} errorColor={'#cc0000'} />
-    <BlockMath
-      math="\\int_{"
-      renderError={err => <b>Custom error message: {err.name}</b>}
-    />
-    <BlockMath math="\sum_{" />
-    <BlockMath
-      math={'\\sum_{'}
-      renderError={err => <b>Custom error message: {err.name}</b>}
-    />
-    <BlockMath math={123} />
-    <BlockMath
-      math={123}
-      renderError={err => <b>Custom error message: {err.name}</b>}
-    />
-  </div>
-);
-
-// ReactDOM.render(<ExamplePage />, document.getElementById('root'));
-
-export default ExamplePage
