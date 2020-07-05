@@ -9,7 +9,7 @@ import AIFormulas from './Fixtures/ai_out.json';
 // regard these colors as enum types for component state
 // a useful shortcut -- maintaining one state var instead
 // of many
-const correct = 'rgba(151, 226, 153, .7)';
+const correct = 'rgba(151, 226, 153, .9)';
 const unselected = 'rgba(255, 255, 255, .1)';
 const fullWhite = 'white'
 
@@ -39,7 +39,7 @@ export const GuessWho = () => {
     const correctAnswer = creator === 'Human';
     const correctAnswerSelected = selection === correct  && correctAnswer;
     const lightShadow = 'rgba(0,0,0,.1)';
-    const darkShadow = 'rgba(0,0,0,.2)';
+    const darkShadow = 'rgba(0,0,0,.3)';
     return {
       display: 'flex',
       alignItems: 'center',
