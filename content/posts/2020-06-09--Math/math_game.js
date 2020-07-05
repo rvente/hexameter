@@ -7,7 +7,7 @@ import HumanFormulas from './Fixtures/human_out.json';
 import AIFormulas from './Fixtures/ai_out.json';
 
 const green = 'rgba(151, 226, 153, .7)';
-const white = 'rgba(255, 255, 255, .05)';
+const white = 'rgba(255, 255, 255, .1)';
 const fullWhite = 'white'
 
 // why is this global? good question: I wanted to keep things concise, so
@@ -42,7 +42,7 @@ export const GuessWho = () => {
       marginBottom: '5px',
       transition: 'all .25s ease-out',
       backgroundColor: creator === 'Human' ? color : white ,
-      color: creator==='Human' && color === green ? fullWhite : 'black'
+      color: creator==='Human' && color === green ? fullWhite : ''
     }
   };
 
