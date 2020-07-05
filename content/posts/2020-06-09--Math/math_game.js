@@ -22,7 +22,7 @@ let duo;
 
 // hack: prevent double clicks from shifting state
 // color is reset upon press, so double press will fail
-function mutateGlobalExpr(selection) {
+function populateGlobals(selection) {
   if (selection === correct) {
     human = {creator: 'Human', expression: getRandomElem(HumanFormulas)};
     ai = {creator: 'AI', expression: getRandomElem(AIFormulas)};
@@ -30,7 +30,7 @@ function mutateGlobalExpr(selection) {
     return unselected
   }
  }
- mutateGlobalExpr(correct);
+ populateGlobals(correct);
 
 export const GuessWho = () => { 
   const [selection, setColor] = useState(unselected);
@@ -55,7 +55,7 @@ export const GuessWho = () => {
       transition: 'all .25s ease-out',
       boxShadow: `1px 1px 10px ${correctAnswerSelected ? darkShadow : lightShadow}`,
       textShadow: correctAnswerSelected ? `1px 1px 2px ${darkShadow}` : '',
-      backgroundColor:  correctAnswer ? selection : unselected ,
+      backgroundColor:  correctAnswerSelected ? selection : unselected ,
       color: correctAnswerSelected ? fullWhite : ''
     }
   };
@@ -77,7 +77,7 @@ export const GuessWho = () => {
           visibility: selection === correct ? 'visible' : 'hidden', 
           opacity: selection === correct ? '1' : '0',
           ...answerChoice('none', selection)}}
-        onClick={() => setColor(mutateGlobalExpr(selection))}
+        onClick={() => setColor(populateGlobals(selection))}
       >
         {setWinMsg(selection)}
       </div>
