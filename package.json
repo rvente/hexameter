@@ -15,7 +15,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "refresh": "curl -X POST http://localhost:8000/__refresh",
-    "deploy": "gatsby build --prefix-paths && echo \"blog.rvente.com\">> public/CNAME && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && echo \"rvente.com\"> public/CNAME && gh-pages -d public"
   },
   "dependencies": {
     "@lekoarts/gatsby-theme-minimal-blog": "^2.3.7",
