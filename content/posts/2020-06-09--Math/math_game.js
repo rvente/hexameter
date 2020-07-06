@@ -10,6 +10,7 @@ import AIFormulas from './Fixtures/ai_out.json';
 // a useful shortcut -- maintaining one state var instead
 // of many
 const correct = 'rgba(151, 226, 153, .9)';
+const hint = 'rgba(151, 226, 153, .4)';
 const unselected = 'rgba(255, 255, 255, .1)';
 const fullWhite = 'white'
 
@@ -37,9 +38,13 @@ export const GuessWho = () => {
 
   const answerChoice = (creator, selection) => { 
     const correctAnswer = creator === 'Human';
-    const correctAnswerSelected = selection === correct  && correctAnswer;
+    const correctAnswerSelected = selection !== unselected  && correctAnswer;
     const lightShadow = 'rgba(0,0,0,.1)';
     const darkShadow = 'rgba(0,0,0,.3)';
+    if (selection === hint) {
+      setTimeout( () => (setColor(unselected)), 500)
+      // setInterval( () => (setColor(unselected)), 500)
+    }
     return {
       display: 'flex',
       alignItems: 'center',
@@ -91,8 +96,7 @@ export const GuessWho = () => {
  }
 
 function revealTrue(creator) {
-  const newColor = creator !== "Human" ? unselected : correct;
-  return newColor;
+  return creator !== "Human" ? hint : correct;
   
 }
 
