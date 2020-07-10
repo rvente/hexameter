@@ -72,7 +72,7 @@ export const GuessWho = () => {
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: '10px',
-      overflow: 'scroll',
+      overflow: 'hidden',
       padding: '10px',
       height: 'auto',
       minHeight: '75px',

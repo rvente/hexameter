@@ -12,7 +12,8 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-      <script data-ad-client="ca-pub-9020402514650225" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      {/* adsense should be taken care of by the plugin */}
+      {/* <script data-ad-client="ca-pub-9020402514650225" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
