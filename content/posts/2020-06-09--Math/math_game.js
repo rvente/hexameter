@@ -72,9 +72,10 @@ export const GuessWho = () => {
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: '10px',
-      overflow: 'hidden',
-      padding: '20px',
-      height: '75px',
+      overflow: 'scroll',
+      padding: '10px',
+      height: 'auto',
+      minHeight: '75px',
       border: 'rgba(0,0,0,.1) thin solid',
       width: 'min(90vw, 600px)',
       margin: 'auto',
@@ -119,7 +120,7 @@ export const GuessWho = () => {
     <div>
       <a
       href={`https://arxiv.org/abs/${h_label}`}
-      style={{color: 'black'}}
+      style={{color: ''}}
       >{ `From ${h_label}`}</a> &nbsp;
       {getRandomElem(win_msg)}
     </div>
@@ -138,7 +139,7 @@ function getRandomInt(max) {
 
 function rendering(el) {
   try {
-    katex.renderToString(el, {
+    const exp = katex.renderToString(el, {
       displayMode: false,
       throwOnError:true,
       strict: "error",
@@ -148,9 +149,9 @@ function rendering(el) {
         "\\textup": "\\text",
       },
     });
-    return true;
+    return exp;
   } catch {
-    return false;
+    return "";
   }
 }
 
@@ -164,14 +165,19 @@ function getRandomElem(indexable) {
 
 function getRandomCorrect(indexable) {
   const labelLen = "1801.00497".length;
-  let exp= indexable[getRandomInt(indexable.length)].replace(/%(.*?)/g, "").substring(0,200);
-  while (! rendering(exp) ) {
-    exp= indexable[getRandomInt(indexable.length)];
+  let line = indexable[getRandomInt(indexable.length)].replace(/%(.*?)/g, "").substring(0,200);
+  let label = line.substring(0,labelLen);
+  let exp = line.substring(labelLen);
+  // keep trying until the string does not error or contain error messages
+  while (! rendering(exp) || rendering(exp).includes("KaTeX") ) {
+    line = indexable[getRandomInt(indexable.length)];
+    label = line.substring(0,labelLen);
+    exp = line.substring(labelLen);
   }
   console.log(exp)
   return {
-    label: exp.substring(0,labelLen),
-    real_exp: exp.substring(labelLen)
+    label: label,
+    real_exp: exp
   }
 
 }

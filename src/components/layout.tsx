@@ -26,7 +26,7 @@ const Layout = ({ children, className }: LayoutProps) => (
         },
         a: {
           transition: `all 0.3s ease-in-out`,
-          color: `text`,
+          color: theme.colors.text,
         },
         img: {
           maxWidth: "min(90vw, 960px)",
