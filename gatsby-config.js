@@ -1,3 +1,4 @@
+require("dotenv").config()
 
 module.exports = {
   pathPrefix: "",
@@ -41,11 +42,11 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/blake_4096/`,
+            url: `https://twitter.com/blakeistics/`,
           },
           {
             name: `Insta`,
-            url: `https://www.instagram.com/blake_4096/`,
+            url: `https://www.instagram.com/blakeistics/`,
           },
         ],
       },
@@ -53,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        trackingId: process.env.GATSBY_ANALYTICS,
       },
     },
     `gatsby-plugin-sitemap`,
