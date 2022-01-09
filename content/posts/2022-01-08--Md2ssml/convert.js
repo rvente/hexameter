@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import debounce from 'lodash.debounce';
+import axios from 'axios';
 
 /*
  * @author Blake Vente
@@ -9,11 +10,12 @@ import debounce from 'lodash.debounce';
 const ENDPOINT = process.env.GATSBY_PANDOC_ENDPOINT;
 const MARKUP = "# edit me! \n## numbered list example \n1. first item\n2. second item";
 
-
+// styles
 const darkBackground = {
   color: "rgb(214, 222, 235)",
   backgroundColor: "rgb(1, 22, 39)",
 };
+
 const inputField = {
   width: "100%",
   height: "400px",
@@ -29,24 +31,21 @@ const breakStyle = {
 };
 
 export default function Convert() {
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
   const [convertReponse, setConvertResponse] = useState("");
   const [markupRequest, setMarkupRequest] = useState(MARKUP);
 
+
   const HitConvertEndpoint = async (r) => {
-    const requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: JSON.stringify({ "markup": r }),
-      redirect: 'follow'
-    };
-    const res = await fetch(ENDPOINT, requestOptions)
-      .then(response => response.text())
+    const res = await axios.post(ENDPOINT, {"markup": r}, {
+      headers: {
+      "Content-Type": "application/json"
+      }
+    })
+      .then(response => response?.data)
+      .then(response => {console.log(response); return response})
       .catch(error => console.log('error', error));
 
-    setConvertResponse(JSON.parse(res)?.result);
+    setConvertResponse(res.result);
   };
 
   const handleInputChange = (e) => {
