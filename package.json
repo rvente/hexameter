@@ -30,6 +30,7 @@
     "gatsby-transformer-remark": "^2.8.19",
     "gh-pages": "^3.0.0",
     "katex": "^0.11.1",
+    "lodash.debounce": "^4.0.8",
     "p5": "^1.0.0",
     "react": "^16.13.1",
     "react-adsense": "^0.1.0",
