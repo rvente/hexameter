@@ -10,20 +10,20 @@ toc: true
 
 Diglossia is the segregation of the use of two language varieties on the basis
 of function by members of a speech community. That's a pile of jargon. If you
-use one language or dialect in formal siturations, and another in informal ones,
+use one language or dialect in formal situations, and another in informal ones,
 then you are likely a part of a diglossic speech community. 
 
 Previous Linguists have named these informal contexts Low (domestic, local) and
 call the formal context High (academic, national, global). I will call them
 Formal and Informal.
 
-New York has General American English GAE and African American Vernacular AAVE
-(also known as Black American English, or Ebonics) among our many languages
-spoken here. AAVE is unique because despite being easily identifyable as dialect
-of English, it has a distinctive grammar. Copula deletion and negative concord
-are two of its features.
+New York, like many states, has General American English (GAE) and African
+American Vernacular (AAVE) (also known as Black American English, or Ebonics)
+among its many dialects. AAVE is unique because despite being easily
+identifiable as dialect of English, it has a distinctive grammar. Copula
+deletion and negative concord are two of its features.
 
-In school, they don't teach AAVE. If anything opposite is true. My teachers said
+In school, they don't teach AAVE. If anything, the opposite is true. My teachers said
 "Repeat after me. Ain't is Not a word" and "people will respect you more if you
 speak *proper* English." When I went home, I spoke Creole. On the news, I heard
 GAE. In TV shows, GAE. On the internet, GAE...
