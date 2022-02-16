@@ -10,6 +10,11 @@ import VCard from 'vcard-creator';
  */
 
 // styles
+const marginPad = {
+  margin: "10px",
+  padding: "10px",
+}
+
 const inputField = {
   width: "50%",
   fontSize: "1rem",
@@ -20,35 +25,29 @@ const inputField = {
   borderWidth: "1px",
   backgroundColor: "var(--theme-ui-colors-transparent,transparent)",
   display: "block",
-  margin: "10px",
-  padding: "10px",
+  ...marginPad
 }
 
 const fillContainer = {
   backgroundColor: "white",
   width: "276px", // 256 + 2 * padding
-  padding: "10px"
+  ...marginPad
 }
 
 
-function ContactQRCode({ firstName, lastName, phoneNumber, title, website, email, company}) {
+function ContactQRCode({ firstName, lastName, phoneNumber, title, website, email, company }) {
 
-  // Define a new vCard
   const myVCard = new VCard()
 
-  // Some variables
-
   myVCard
-    // Add personal data
     .addName(lastName, firstName)
-    // Add work data
     .addCompany(company)
     .addJobtitle(title)
     .addEmail(email)
-    .addPhoneNumber(phoneNumber.replace(/\D/g,''), 'PREF')
+    // strip out any non-numeric chars from phone number
+    // gets coerced to a string so no need for parsing the int
+    .addPhoneNumber(phoneNumber.replace(/\D/g, ''), 'PREF')
     .addURL(website);
-
-  console.log(myVCard.toString());
 
   return (
     <div style={fillContainer} >
@@ -60,7 +59,7 @@ const DbounceContactQRCode = debounceRender(ContactQRCode, 500);
 
 export default function QRContact() {
 
-  const formFields = {
+  const formPlaceholders = {
     firstName: "First Name",
     lastName: "Last Name",
     phoneNumber: "999-999-9999",
@@ -70,15 +69,25 @@ export default function QRContact() {
     website: "https://example.com",
   };
 
+  // same keys but with the values cleared
+  const formdefaultValues = Object.fromEntries(Object.keys(formPlaceholders).map((k) => [k, ""]));
+
   const { register, watch } = useForm(
-    { defaultValues: formFields }
+    { defaultValues: formdefaultValues }
   );
 
   return (
     <div>
-      <form >
-        {/* register your input into the hook by invoking the "register" function */}
-        {Object.keys(formFields).map( (registerKey, i) => <input key={i} style={inputField} {...register(registerKey)} /> )}
+      <form>
+        {
+          Object.keys(formPlaceholders).map(
+            (registerKey, i) =>
+              <input key={i}
+                style={inputField}
+                placeholder={formPlaceholders[registerKey]}
+                {...register(registerKey)}
+              />
+          )}
       </form>
       <DbounceContactQRCode {...watch()} />
     </div>
