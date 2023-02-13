@@ -4,6 +4,7 @@
 <url> <loc>https://rvente.com/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://rvente.com/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://rvente.com/qr-contact</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://rvente.com/textgrid-alignment-helper</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://rvente.com/md-2-ssml</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://rvente.com/this-is-not-math</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://rvente.com/texnet</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
