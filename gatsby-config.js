@@ -42,11 +42,11 @@ module.exports = {
         externalLinks: [
           {
             name: `Twitter`,
-            url: `https://twitter.com/blakeistics/`,
+            url: `https://twitter.com/eigenblake/`,
           },
           {
             name: `Insta`,
-            url: `https://www.instagram.com/blakeistics/`,
+            url: `https://www.instagram.com/eigenblake/`,
           },
         ],
       },

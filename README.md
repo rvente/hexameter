@@ -8,3 +8,9 @@ deployment](https://blog.bitsrc.io/deploy-a-gatsby-site-on-github-pages-for-free
 
 [Cover image](https://unsplash.com/photos/8cylkZnxEiE) is from user **eberhard
 grossgasteiger** on Unsplash
+
+
+
+export NODE_OPTIONS=--openssl-legacy-provider
+
+v18.15.0
